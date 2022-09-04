@@ -68,3 +68,8 @@ footer {
 	position: absolute;
 	bottom: 0;
 }
+.errors_message {
+	display: block;
+	background-color: deeppink;
+	color: white;
+}

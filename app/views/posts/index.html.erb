@@ -14,7 +14,7 @@
 				<tbody>
 					<tr class="registered">
 						<td><%= image_tag "#{post.image_name}", size: '240x140' %></td>
-						<td><%= post.name %></td>
+						<td><%= link_to post.name, post_path(post) %></td>
 						<td><%= post.introduce%></td>
 						<td>¥<%= post.price %></td>
 						<td><%= post.created_at %></td>
@@ -22,4 +22,5 @@
 				</tbody>
 			<% end %>
 	</table>
+	<%= paginate @posts %>
 </div>

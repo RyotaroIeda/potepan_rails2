@@ -11,7 +11,7 @@
 				<li class="list-group-item"><%= @post.address %></li>
 			</ul>
 			 <div class="card-body">
-			 	<a href="#" class="btn btn-primary">予約画面へ</a>
+				<%= link_to "予約画面へ", new_post_reservation_path(@post) , class: "btn btn-primary" %>
 			</div>
 		</div>
 	</div>

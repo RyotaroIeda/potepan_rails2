@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  post: one
+  start_date: 2022-09-03
+  end_date: 2022-09-03
+  person: 1
+  price: 1
+  name: MyString
+  introduce: MyText
+  total_price: 1
+  total_person: 1
+
+two:
+  user: two
+  post: two
+  start_date: 2022-09-03
+  end_date: 2022-09-03
+  person: 1
+  price: 1
+  name: MyString
+  introduce: MyText
+  total_price: 1
+  total_person: 1

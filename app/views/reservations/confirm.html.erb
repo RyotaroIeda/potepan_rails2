@@ -1,0 +1,42 @@
+<ol class="nav">
+	<li>1.入力</li>
+	<li class="current">2.確認</li>
+	<li>3.完了</li>
+</ol>
+
+<div class="card" style="width: 54rem;">
+	<div class="card-header">予約内容確認</div>
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			<label for="name">料金</label>¥<%= @post.price %> /日
+		</li>
+		<li class="list-group-item">
+			<label for="name">チェックイン</label><%= @reservation.start_date %>
+		</li>
+		<li class="list-group-item">
+			<label for="name">チェックアウト</label><%= @reservation.end_date %>
+		</li>
+		<li class="list-group-item">
+			<label for="name">宿泊日数</label><%= @reservation.total_days %>
+		</li>
+		<li class="list-group-item">
+			<label for="name">人数</label><%= @reservation.person %>
+		</li>
+		<li class="list-group-item">
+			<label for="name">合計金額</label><%= @reservation.total_price %>
+		</li>
+		<div class="card-body">
+			<%= link_to "予約画面に戻る", new_post_reservation_path(:post_id) , class: "btn btn-danger" %>
+		</div>
+		<div class="card-body">
+			<%= form_with model: @reservation do |f| %>
+				<%= f.hidden_field :start_date %>
+				<%= f.hidden_field :end_date %>
+				<%= f.hidden_field :total_days %>
+				<%= f.hidden_field :person %>
+				<%= f.hidden_field :total_price %>
+				<%= f.submit "予約を確定する", class:"btn btn-primary" %>
+			<% end %>
+		</div>
+	</ul>
+</div>
