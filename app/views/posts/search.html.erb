@@ -1,0 +1,28 @@
+<div class="container-index">
+	<h4>検索結果:<%= @search_posts.count %>件</h4>
+	<div class="search">
+	<table class="table table-striped" style="width: 800px;">
+		<thead>
+			<tr>
+				<th>ルーム画像</th>
+				<th>ルーム名</th>
+				<th>ルーム紹介</th>
+				<th>料金</th>
+				<th>作成日</th>
+			</tr>
+		</thead>
+			<% @search_posts.each do |post| %>
+				<tbody>
+					<tr class="registered">
+						<td><%= image_tag "#{post.image_name}", size: '240x140' %></td>
+						<td><%= link_to post.name, post_path(post) %></td>
+						<td><%= post.introduce%></td>
+						<td>¥<%= post.price %></td>
+						<td><%= post.created_at %></td>
+					</tr>
+				</tbody>
+			<% end %>
+	</table>
+	</div>
+	<%= paginate @posts %>
+</div>

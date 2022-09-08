@@ -14,7 +14,7 @@
 	border-right: 2px solid #e2e2e2;
 }
 .body {
-	width: 80%;
+	width: 100%;
 	background-color:	#f6f8f9;
 	text-align: center;
 }
@@ -34,7 +34,9 @@
 //index
 .container-index {
 	padding: 30px 60px;
+	margin: 0;
 }
+
 .container-index h4 {
 	padding-bottom: 1.5rem;
 }
@@ -50,4 +52,9 @@
 }
 .container-index image {
 	object-fit: cover;
+}
+//search
+.search {
+	width: 800px;
+	margin: 0;
 }

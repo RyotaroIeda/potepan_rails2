@@ -11,7 +11,10 @@
 				<li class="list-group-item"><%= @post.address %></li>
 			</ul>
 			 <div class="card-body">
-				<%= link_to "予約画面へ", new_post_reservation_path(@post) , class: "btn btn-primary" %>
+				<%= form_with url: new_post_reservation_path(@post), method: :get, local: true do |f| %>
+					<%= f.hidden_field :post_id, value: @post.id %>
+					<%= f.submit "予約画面へ", class: "btn btn-sm btn-primary" %>
+				<% end %>
 			</div>
 		</div>
 	</div>

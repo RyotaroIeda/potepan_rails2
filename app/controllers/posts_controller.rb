@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_q, only: [:index, :search]
+
   def index
     @posts = Post.all.page(params[:page]).per(10)
     @reservations = Reservation.all
@@ -20,6 +22,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @reservation = Reservation.new
+    @user = current_user
+  end
+
+  def search
+    @posts = Post.all.page(params[:page]).per(10)
   end
 
   private
@@ -27,6 +35,11 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:name, :introduce, :price, :address, :image_name)
     end
+
+    def set_q
+      @q = Post.ransack(params[:q])
+    end
+  
   
 
 end

@@ -35,6 +35,8 @@ gem 'net-imap'
 gem 'net-pop'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'mini_magick'
+gem 'ransack'
 
 
 group :development, :test do

@@ -1,0 +1,27 @@
+<h4>予約済みルーム一覧</h4>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ルーム画像</th>
+      <th scope="col">ルーム名</th>
+      <th scope="col">ルーム紹介</th>
+      <th scope="col">合計金額</th>
+			<th scope="col">チェックイン</th>
+			<th scope="col">チェックアウト</th>
+			<th scope="col">予約確定日時</th>
+    </tr>
+  </thead>
+	<% @reservations.each do |reservation| %>
+  <tbody>
+    <tr>
+      <td><%= image_tag "#{reservation.image_name}", size: '240x140' %></td>
+      <td><%= link_to reservation.name, post_path(reservation) %></td>
+      <td><%= reservation.introduce %></td>
+			<td>¥<%= reservation.total_price %></td>
+			<td><%= reservation.start_date %></td>
+			<td><%= reservation.end_date %></td>
+			<td><%= reservation.created_at %></td>
+    </tr>
+  </tbody>
+	<% end %>
+</table>

@@ -1,10 +1,15 @@
 <div class="main-container">
 	<div class="first-view">
-		<div class="form-area">
-			<p>Potepan Shareでまだ体験したことのない旅をしよう</p>
-			<p>エリア</p>
-			<input>
-			<input type="submit">
+		<div class="submit-form">
+			<div class="form-area">
+				<p>Potepan Shareでまだ体験したことのない旅をしよう</p>
+				<dl class="searchbox">
+					<%= search_form_for @search, url: search_posts_path do |f| %>
+						<dt><%= f.text_field :address_cont ,placeholder: 'エリア' %></dt>
+						<dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+					<% end %>
+				</dl>
+			</div>
 		</div>
 	</div>
 </div>

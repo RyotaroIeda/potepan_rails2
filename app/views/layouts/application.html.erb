@@ -16,13 +16,23 @@
       <div class="header">
         <ul class="header-left">
           <li>
-            <%= image_tag "header_logo.png" %>
+            <%= link_to image_tag("header_logo.png"), "/" %>
           </li>
           <li>
-            <input placeholder="エリア">
+            <dl class="searchbox">
+              <%= search_form_for @search, url: search_posts_path do |f| %>
+                <dt><%= f.text_field :address_cont ,placeholder: 'エリア' %></dt>
+                <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+              <% end %>
+            </dl>
           </li>
           <li>
-            <input placeholder="キーワード">
+            <dl class="searchbox">
+              <%= search_form_for @search, url: search_posts_path do |f| %>
+                <dt><%= f.text_field :name_or_introduce_or_address_cont ,placeholder: 'キーワード' %></dt>
+                <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+              <% end %>
+            </dl>
           </li>
         </ul>
           <nav>
@@ -36,7 +46,7 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
                       <button class="dropdown-item" type="button"><%= link_to "ルーム登録", new_post_path %></button>
-                      <button class="dropdown-item" type="button">予約済みルーム一覧</button>
+                      <button class="dropdown-item" type="button"><%= link_to "予約済みルーム一覧", reservations_index_path %></button>
                       <button class="dropdown-item" type="button"><%= link_to "登録済みルーム一覧", posts_path %></button>
                       <button class="dropdown-item" type="button"><%= link_to "設定", edit_user_path(current_user) %></button>
                       <button class="dropdown-item" type="button"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
