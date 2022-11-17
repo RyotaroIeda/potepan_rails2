@@ -1,0 +1,29 @@
+<div class="main-container">
+	<div class="first-view">
+		<div class="submit-form">
+			<div class="form-area">
+				<p>Potepan Shareでまだ体験したことのない旅をしよう</p>
+				<dl class="searchbox">
+					<%= search_form_for @search, url: search_posts_path do |f| %>
+						<dt><%= f.text_field :address_cont ,placeholder: 'エリア' %></dt>
+						<dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
+					<% end %>
+				</dl>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="second-container">
+  <div class="topic-title">
+	  <h1>おすすめのエリア</h1>
+	</div>
+	<div class='topic-image'>
+    <ul class="pictures">
+      <li class="list"><%= image_tag "tokyo.jpg" %></li>
+      <li class="list"> <%= image_tag "osaka.jpg" %></li>
+      <li class="list"><%= image_tag "kyoto.jpg" %></li>
+      <li class="list"> <%= image_tag "sapporo.jpg" %></li>
+    </ul>
+	</div>
+</div>

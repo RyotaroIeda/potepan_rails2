@@ -1,0 +1,45 @@
+<div class="contaner">
+	
+	<div class="sidebar">
+		<p><%= current_user.name %></p>
+			<ul>
+				<li><%= link_to "アカウント", user_path(current_user) %></li>
+				<li><%= link_to "プロフィール", edit_user_path(current_user) %></li>
+			</ul>
+	</div>
+	
+	<div class="body">
+		<% @user.errors.full_messages.each do |message| %>
+        <div class="errors_message">
+        <%= message %>
+        </div>
+    <% end %>
+
+		<%= form_with model: @user do |f| %>
+		
+		<div class="card" style="width: 54rem;">
+  		<div class="card-header">プロフィール</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<%= image_tag "#{@user.image_name}", class:"icon" %>
+				</li>
+				<li class="list-group-item">
+					<label for="email">アイコン画像</label><%= f.file_field :image_name, placeholder: "画像を選択" %>
+				</li>
+				<li class="list-group-item">
+					<label for="email">名前</label><%= f.text_field :name, placeholder: current_user.name %>
+				</li>
+				<li class="list-group-item">
+					<label for="password">自己紹介文</label><%= f.text_area :text, placeholder: "自己紹介を入力" %>
+				</li>
+				<li class="list-group-item">
+					<input type="submit" value="更新" class="btn btn-sm btn-danger">
+				</li>
+			</ul>
+		</div>
+		
+		<% end %>
+	
+	</div>
+
+</div>		

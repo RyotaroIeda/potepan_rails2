@@ -1,0 +1,60 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+//new
+.contaner {
+	display: flex;
+	width: 100%;
+}
+.sidebar {
+	width: 20%;
+	background-color:	white;
+	padding: 30px 15px;
+	border-right: 2px solid #e2e2e2;
+}
+.body {
+	width: 100%;
+	background-color:	#f6f8f9;
+	text-align: center;
+}
+.card {
+	margin: 30px auto;
+	text-align: left;
+	max-width: 880px;
+}
+.list-group-item label {
+	width: 25%;
+}
+//show
+.image-bar {
+	text-align: center;
+	height: 100%;
+}
+//index
+.container-index {
+	padding: 30px 60px;
+	margin: 0;
+}
+
+.container-index h4 {
+	padding-bottom: 1.5rem;
+}
+.container-index table {
+	max-width: 800px;
+}
+.registered {
+	vertical-align: inherit;
+	height: 160px;
+}
+.index-image {
+	padding: 10px;
+}
+.container-index image {
+	object-fit: cover;
+}
+//search
+.search {
+	width: 800px;
+	margin: 0;
+}

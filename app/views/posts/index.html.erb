@@ -1,0 +1,26 @@
+<div class="container-index">
+	<h4>登録済みルーム一覧</h4>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ルーム画像</th>
+				<th>ルーム名</th>
+				<th>ルーム紹介</th>
+				<th>料金</th>
+				<th>作成日</th>
+			</tr>
+		</thead>
+			<% @posts.each do |post| %>
+				<tbody>
+					<tr class="registered">
+						<td><%= image_tag "#{post.image_name}", size: '240x140' %></td>
+						<td><%= link_to post.name, post_path(post) %></td>
+						<td><%= post.introduce%></td>
+						<td>¥<%= post.price %></td>
+						<td><%= post.created_at %></td>
+					</tr>
+				</tbody>
+			<% end %>
+	</table>
+	<%= paginate @posts %>
+</div>

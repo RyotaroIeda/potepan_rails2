@@ -1,0 +1,17 @@
+<div class="card" style="width: 54rem;">
+	<div class="card-header">予約詳細画面</div>
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			<label for="name">予約した部屋</label><%= @post.name %>
+		</li>
+		<li class="list-group-item">
+			<label for="introduce">チェックイン</label><%= @reservation.start_date %>
+		</li>
+		<li class="list-group-item">
+			<label for="price">チェックアウト</label><%= @reservation.end_date %>
+		</li>
+		<li class="list-group-item">
+			<label for="address">価格</label><%= @reservation.total_price %>円
+		</li>
+	</ul>
+</div>

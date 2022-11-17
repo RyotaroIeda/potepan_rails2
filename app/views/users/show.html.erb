@@ -1,0 +1,30 @@
+<div class="contaner">
+	
+	<div class="sidebar">
+		<p><%= current_user.name %></p>
+			<ul>
+				<li><%= link_to "アカウント", user_path(current_user) %></li>
+				<li><%= link_to "プロフィール", edit_user_path(current_user) %></li>
+			</ul>
+	</div>
+	
+	<div class="body">
+		<div class="card" style="width: 54rem;">
+  		<div class="card-header">
+    	アカウント
+  		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">
+				<label for="email">メールアドレス</label><%= @user.email %>
+			</li>
+			<li class="list-group-item">
+				<label for="password">パスワード</label><%= "*********" %>
+			</li>
+			<li class="list-group-item">
+				<%= link_to "編集", edit_user_registration_path, class: "btn btn-sm btn-danger" %>
+			</li>
+		</ul>
+		</div>
+	</div>
+
+</div>		
